@@ -74,6 +74,22 @@ The linear control beats the single selected and grown trees on this split.
 - Nineteen CLI modes and a package with data, frozen models and report. CI checks
   Python 3.10-3.13 and installs the wheel outside the source checkout.
 
+For the full installed replay, run `python examples/check_installed.py` after
+installing NumPy 2.2.6, setuptools and wheel. It builds a wheel in a fresh
+environment and runs all 101 existing Python tests outside the checkout. Nine
+installed module origins are checked before and after. Copied tests, exporters,
+browser bundles, figures and static data contain no library Python source.
+Existing split references, full refits, all-row holdout checks and figure
+regeneration remain in that suite.
+
+The command replay compares 20 complete reports across all 19 CLI modes and 11
+complete output files, including freshly fitted trees, the bagging ensemble,
+pruning, response slices and both counterfactual audits. The package has a module
+CLI, not a console script. These are source/wheel comparisons in the same runtime,
+not independent numerical or statistical evidence. Use `--section tests` or
+`--section commands` to run either half. CI runs both in a separate job and keeps
+the original wheel job and tolerance-based checks.
+
 ## Data and exact-copy grouping
 
 The unmodified [UCI Wine Quality dataset](https://archive.ics.uci.edu/dataset/186/wine%2Bquality)
