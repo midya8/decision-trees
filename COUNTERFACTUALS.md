@@ -1,10 +1,10 @@
 # Constrained multi-feature model counterfactuals
 
-Which input is closest to this row while making one frozen CART output a value in a requested closed band? TreeLab enumerates every leaf, intersects its split path with user bounds and immutable inputs, projects the row onto each feasible target box, and ranks those witnesses by weighted L1 cost.
+Which input is closest to this row while making one frozen CART output a value in a requested closed band? Decision trees enumerates every leaf, intersects its split path with user bounds and immutable inputs, projects the row onto each feasible target box, and ranks those witnesses by weighted L1 cost.
 
-This is established closest-leaf counterfactual geometry, implemented here for TreeLab's own single-tree format. It is not a new algorithm, a causal intervention, a plausible-wine generator or an optimizer for the bagging ensemble.
+This is established closest-leaf counterfactual geometry, implemented here for Decision trees's own single-tree format. It is not a new algorithm, a causal intervention, a plausible-wine generator or an optimizer for the bagging ensemble.
 
-[Browser demo](https://midya8.github.io/treelab/counterfactual.html) | [one-axis explorer](https://midya8.github.io/treelab/)
+[Browser demo](https://midya8.github.io/decision-trees/counterfactual.html) | [one-axis explorer](https://midya8.github.io/decision-trees/)
 
 ## Run it
 
