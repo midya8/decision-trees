@@ -1,4 +1,4 @@
-# TreeLab
+# Decision trees
 
 CART regression, weakest-link pruning and group-bootstrap bagging in NumPy.
 Follow a prediction through its tree, inspect one-feature response curves, or
@@ -9,9 +9,9 @@ run offline; the browser pages display the saved results.
 
 - **Fit and prune:** inspect CART splits and the weakest-link pruning path. Validation selects a pruning state; stronger same-fit controls remain in the report.
 - **Group bootstrap:** inspect all 32 frozen trees, shared-copy bootstrap groups and out-of-bag support.
-- **One-feature response:** inspect every interval while holding other features fixed. The [response explorer](https://midya8.github.io/treelab/) shows all 66 slices and 1,028 segments.
-- **Single-tree counterfactual:** find the closest allowed binary64 input under weighted L1 cost. The [counterfactual inspector](https://midya8.github.io/treelab/counterfactual.html) retains all 36 requests, including infeasible ones.
-- **Ensemble search:** search compatible boxes across the 32 frozen trees. The [ensemble inspector](https://midya8.github.io/treelab/forest.html) retains all 36 outcomes, including unfinished searches.
+- **One-feature response:** inspect every interval while holding other features fixed. The [response explorer](https://midya8.github.io/decision-trees/) shows all 66 slices and 1,028 segments.
+- **Single-tree counterfactual:** find the closest allowed binary64 input under weighted L1 cost. The [counterfactual inspector](https://midya8.github.io/decision-trees/counterfactual.html) retains all 36 requests, including infeasible ones.
+- **Ensemble search:** search compatible boxes across the 32 frozen trees. The [ensemble inspector](https://midya8.github.io/decision-trees/forest.html) retains all 36 outcomes, including unfinished searches.
 
 Single-tree counterfactuals have exact rational costs and strict-threshold
 successors, not epsilon adjustments. Ensemble search reports global lower/upper
@@ -42,7 +42,7 @@ together; zero OOB votes mean null.
 <details>
 <summary>Pruning path and same-fit controls</summary>
 
-![All pruning states, held-out controls and a complete prediction route](https://github.com/midya8/treelab/raw/e9a7aed4d140d15233324045089f58d8152bf943/assets/tree-audit.svg)
+![All pruning states, held-out controls and a complete prediction route](https://github.com/midya8/decision-trees/raw/e9a7aed4d140d15233324045089f58d8152bf943/assets/tree-audit.svg)
 
 The linear control beats the single selected and grown trees on this split.
 
@@ -242,7 +242,7 @@ python -m treelab forest-audit --output /tmp/forest-audit
 python -m treelab forest-search --model treelab/artifacts/bagging-model.json.gz --input examples/forest-search.json
 ```
 
-Open the [ensemble inspector](https://midya8.github.io/treelab/forest.html) or
+Open the [ensemble inspector](https://midya8.github.io/decision-trees/forest.html) or
 `docs/forest.html` locally for all proof states, exact objective bounds,
 full-member witnesses and the three fixed budgets. [FOREST_SEARCH.md](FOREST_SEARCH.md)
 defines the finite-binary64 model scope, warm starts and incomplete results.
